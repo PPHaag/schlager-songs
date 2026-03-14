@@ -1,1 +1,1 @@
-Project for a hit record with schlager songs. details follow when available. 
+Project for a hit record with schlager songs. Details follow when available. 
