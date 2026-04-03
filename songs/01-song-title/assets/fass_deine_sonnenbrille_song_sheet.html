@@ -1,0 +1,367 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Barlow+Condensed:wght@400;600;700&display=swap');
+
+  .song-sheet {
+    font-family: 'Barlow Condensed', sans-serif;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 0 2rem;
+  }
+
+  .song-header {
+    background: #1a0a00;
+    color: #f5c842;
+    padding: 2rem 2rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 0 0 0;
+  }
+
+  .song-header::before {
+    content: '🏔️ 🍺 🕶️ 🏔️ 🍺 🕶️ 🏔️ 🍺 🕶️ 🏔️ 🍺 🕶️';
+    position: absolute;
+    top: 8px;
+    left: 0;
+    font-size: 11px;
+    letter-spacing: 6px;
+    opacity: 0.25;
+    white-space: nowrap;
+  }
+
+  .song-header::after {
+    content: '🏔️ 🍺 🕶️ 🏔️ 🍺 🕶️ 🏔️ 🍺 🕶️ 🏔️ 🍺 🕶️';
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    font-size: 11px;
+    letter-spacing: 6px;
+    opacity: 0.25;
+    white-space: nowrap;
+  }
+
+  .track-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #c8922a;
+    margin-bottom: 0.5rem;
+  }
+
+  .song-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.05;
+    color: #f5c842;
+    margin: 0 0 0.5rem;
+    text-shadow: 3px 3px 0px #5c3600;
+  }
+
+  .song-meta {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 13px;
+    color: #c8922a;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+  }
+
+  .song-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .vibe-bar {
+    background: #2d1500;
+    padding: 0.6rem 2rem;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #e8a020;
+    text-transform: uppercase;
+  }
+
+  .song-body {
+    padding: 1.5rem 2rem 0;
+  }
+
+  .section {
+    margin-bottom: 1.5rem;
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+  }
+
+  .chorus-label {
+    color: #b85c00;
+    font-weight: 600;
+    border-bottom-color: #b85c00;
+  }
+
+  .lyrics-block {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+  }
+
+  .chorus-block {
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    background: var(--color-background-secondary);
+    padding: 1rem 1.25rem;
+    border-left: 3px solid #c8922a;
+    border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+  }
+
+  .bridge-block {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    font-style: italic;
+  }
+
+  .hook-line {
+    color: #b85c00;
+    font-weight: 700;
+  }
+
+  .song-notes {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg);
+    background: var(--color-background-primary);
+  }
+
+  .song-notes-title {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    margin-bottom: 0.75rem;
+  }
+
+  .notes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  .note-item strong {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    font-weight: 500;
+  }
+
+  .action-bar {
+    display: flex;
+    gap: 8px;
+    margin-top: 1.5rem;
+    padding: 0 2rem;
+  }
+
+  .action-btn {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 0.5px solid var(--color-border-secondary);
+    border-radius: var(--border-radius-md);
+    background: var(--color-background-primary);
+    color: var(--color-text-secondary);
+    transition: background 0.15s;
+  }
+
+  .action-btn:hover {
+    background: var(--color-background-secondary);
+    color: var(--color-text-primary);
+  }
+
+  .action-btn.primary {
+    border-color: #b85c00;
+    color: #b85c00;
+  }
+
+  .action-btn.primary:hover {
+    background: #fff5e8;
+    color: #8a4200;
+  }
+</style>
+
+<div class="song-sheet">
+  <div class="song-header">
+    <div class="track-label">Track 01 — Project Schlager</div>
+    <div class="song-title">Fass deine<br>Sonnenbrille</div>
+    <div class="song-meta">
+      <span>🎿 Après-ski</span>
+      <span>🍺 Party anthem</span>
+      <span>🕶️ Alpine romance</span>
+    </div>
+  </div>
+
+  <div class="vibe-bar">⚡ Tempo: 128 BPM &nbsp;·&nbsp; Key: G-Dur &nbsp;·&nbsp; Accordion + brass &nbsp;·&nbsp; 4/4</div>
+
+  <div class="song-body">
+
+    <div class="section">
+      <div class="section-label">Strophe 1</div>
+      <div class="lyrics-block">
+        Die Sonne brennt auf deinen Wangen,<br>
+        der Schnee glitzert, ich bin gefangen.<br>
+        Du stehst da mit diesem Lächeln breit,<br>
+        und die Berge ringsherum — so weit, so weit.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Pre-Chorus</div>
+      <div class="lyrics-block">
+        Mein Herz macht — boom, boom, boom,<br>
+        ich brauche mehr als einen Rum.<br>
+        Du schaust mich an, ich dreh' mich um —<br>
+        <span class="hook-line">Wart' mal... fass deine Sonnenbrille!</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label chorus-label">🔁 Chorus — sing it loud!</div>
+      <div class="chorus-block">
+        Fass deine Sonnenbrille, wir tanzen auf dem Tisch!<br>
+        Das Bier ist kalt, die Luft ist frisch!<br>
+        Fass deine Sonnenbrille, der Abend fängt erst an —<br>
+        <span class="hook-line">Ich bin der Mann, der dich nicht gehen lassen kann!</span><br><br>
+        Fass deine Sonnenbrille — hey, hey, hey!<br>
+        Fass deine Sonnenbrille — olé!<br>
+        Die Nacht gehört uns beiden,<br>
+        wir müssen gar nichts leiden —<br>
+        <span class="hook-line">Fass deine Sonnenbrille und bleib bei mir!</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Strophe 2</div>
+      <div class="lyrics-block">
+        Wir fahren Ski bis in die Nacht hinein,<br>
+        die Hütte wartet, warm und klein.<br>
+        Der Schnapps ist heiß, das Feuer brennt —<br>
+        und du bist alles, was mein Herz noch kennt.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Pre-Chorus</div>
+      <div class="lyrics-block">
+        Die Kapelle spielt — tu, tu, tu,<br>
+        ich tanze schon auf meinem Schuh.<br>
+        Du lachst mich an, ich weiß nicht wie —<br>
+        <span class="hook-line">Mein Gott... vergiss die Après-ski!</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label chorus-label">🔁 Chorus</div>
+      <div class="chorus-block">
+        Fass deine Sonnenbrille, wir tanzen auf dem Tisch!<br>
+        Das Bier ist kalt, die Luft ist frisch!<br>
+        Fass deine Sonnenbrille, der Abend fängt erst an —<br>
+        <span class="hook-line">Ich bin der Mann, der dich nicht gehen lassen kann!</span><br><br>
+        Fass deine Sonnenbrille — hey, hey, hey!<br>
+        Fass deine Sonnenbrille — olé!<br>
+        Die Nacht gehört uns beiden,<br>
+        wir müssen gar nichts leiden —<br>
+        <span class="hook-line">Fass deine Sonnenbrille und bleib bei mir!</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Bridge — alle mitsingen!</div>
+      <div class="bridge-block">
+        Ooooh, die Berge rufen laut —<br>
+        ooooh, ich hab' auf dich gebaut!<br>
+        La la la la la la laaa,<br>
+        <span class="hook-line" style="font-style: normal; font-size: 20px;">Sonnenbrille — da, da, da!</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Instrumental break — accordeon solo</div>
+      <div class="lyrics-block" style="color: var(--color-text-tertiary); font-style: italic; font-size: 14px;">
+        [ 8 bars — volle accordeon, crowd handclaps op beats 2 &amp; 4 ]
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label chorus-label">🔁 Final Chorus (x2 — key modulation +1)</div>
+      <div class="chorus-block">
+        Fass deine Sonnenbrille, wir tanzen auf dem Tisch!<br>
+        Das Bier ist kalt, die Luft ist frisch!<br>
+        Fass deine Sonnenbrille, der Abend fängt erst an —<br>
+        <span class="hook-line">Ich bin der Mann, der dich nicht gehen lassen kann!</span><br><br>
+        Fass deine Sonnenbrille — hey, hey, hey!<br>
+        Fass deine Sonnenbrille — olé!<br>
+        Die Nacht gehört uns beiden,<br>
+        wir müssen gar nichts leiden —<br>
+        <span class="hook-line">Fass deine Sonnenbrille und bleib bei mir!</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Outro</div>
+      <div class="lyrics-block">
+        <span style="font-style: italic; color: var(--color-text-secondary);">(fade out, crowd chanting)</span><br>
+        Sonnenbrilleee... Sonnenbrilleee...<br>
+        <span class="hook-line">...und bleib bei mir!</span>
+      </div>
+    </div>
+
+    <div class="song-notes">
+      <div class="song-notes-title">Productie-notities</div>
+      <div class="notes-grid">
+        <div class="note-item">
+          <strong>Structuur</strong>
+          Intro · V1 · Pre · Chorus · V2 · Pre · Chorus · Bridge · Solo · Chorus ×2 · Outro
+        </div>
+        <div class="note-item">
+          <strong>Hooks</strong>
+          "Fass deine Sonnenbrille" als visuele actie + command — instant meezingbaar
+        </div>
+        <div class="note-item">
+          <strong>Crowd moments</strong>
+          Bridge la-la / hey-hey-hey / olé / da-da-da — iedereen kan meedoen
+        </div>
+        <div class="note-item">
+          <strong>Dramatiek</strong>
+          Pre-chorus bouwt spanning op vóór chorus explodeert — klassiek schlager recept
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="action-bar">
+    <button class="action-btn primary" onclick="sendPrompt('Maak een tweede song voor het Schlager album, met een nieuw thema uit de lijst')">Volgende song ↗</button>
+    <button class="action-btn" onclick="sendPrompt('Pas de bridge aan voor Fass deine Sonnenbrille — maak hem nog dramatischer')">Bridge aanpassen ↗</button>
+    <button class="action-btn" onclick="sendPrompt('Geef me productie-tips voor Fass deine Sonnenbrille: arrangement, instrumentatie en key-changes')">Productietips ↗</button>
+  </div>
+</div>
