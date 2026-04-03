@@ -8,7 +8,7 @@
 - Blauen Himmel 
 - Ja Gerne 
 - Immer Sonne
-- Fass deine Sonnenbrille 
+**- Fass deine Sonnenbrille **
 - Kaffee auf die Piste
 - Genau das stimmt
 - Immer viel los
