@@ -5,10 +5,10 @@
 - Ganz egal 
 - Heim
 - Los fahren 
-- Blauen Himmel 
+- Blauen Himmel -> Release
 - Ja Gerne 
 - Immer Sonne
-**- Fass deine Sonnenbrille **
+- Fass deine Sonnenbrille -> release
 - Kaffee auf die Piste
 - Genau das stimmt
 - Immer viel los
@@ -16,7 +16,7 @@
 - Traurig is meine Hartz
 - Ganzen Nacht 
 - Gib mir ein Apfelsaft mit Sprits 
-- Zimmer frei (mich dabei) 
+- Zimmer frei (mich dabei) -> release 
 - Lust am Leben 
 - Vol Gas
 - Apres Ski is für jeder
