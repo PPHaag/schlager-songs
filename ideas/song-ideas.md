@@ -13,7 +13,7 @@
 - Genau das stimmt
 - Immer viel los
 - Nur für dich 
-- Traurig is meine Hartz
+- Traurig is meine Hartz -> release
 - Ganzen Nacht 
 - Gib mir ein Apfelsaft mit Sprits 
 - Zimmer frei (mich dabei) -> release 
